@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Borders</title>
+        <style>
+            body { background:#181922; color:#eee; font-family:sans-serif; margin:0; padding:32px;}
+            h2 { text-align:center; letter-spacing:2px; color:#f2f2f2; margin-bottom:32px; }
+            .box { 
+            padding:14px 12px; 
+            margin:12px 0; 
+            font-size:1.08rem; 
+            background:#23243a;
+            border-radius:7px;
+            box-shadow: 0 2px 8px #0007; 
+            }
+            .all    { border: 2px solid #353547;}
+            .solid  { border: 3px solid #2967a3; }
+            .dotted { border: 3px dotted #c22745; }
+            .dashed { border: 3px dashed #b7a205; }
+            .double { border: 5px double #50177d; }
+            .groove { border: 5px groove #289e8d; }
+            .mix    { border-style: dotted dashed solid double; border-width: 2px 6px 4px 10px; border-color: #704050 #207020 #305080 #8c4000; }
+            .side   { border-top: 5px solid #b23f4d; border-right: 5px dashed #237d92; border-bottom: 4px double #5db340; border-left: 5px groove #a86520; }
+            .radius { border: 4px solid #2f2e3a; border-radius: 18px; }
+            .shrt   { border: 5px solid #3db354; }
+            .clr    { border: 4px solid rgb(160,45,0); }
+        </style>
+    </head>
+    <body>
+        <h2>CSS Border Types — All In One Page</h2>
+        <div class="box all">All sides: solid, #353547</div>
+        <div class="box solid">Solid blue, thick &amp; rounded corners</div>
+        <div class="box dotted">Dotted dark red</div>
+        <div class="box dashed">Dashed dark gold</div>
+        <div class="box double">Double deep purple</div>
+        <div class="box groove">Groove dark teal</div>
+        <div class="box mix">Mixed: top dotted, right dashed, bottom solid, left double (all dark colors)</div>
+        <div class="box side">Each side a different dark style/color</div>
+        <div class="box radius">Solid, big radius</div>
+        <div class="box shrt">Shorthand thick dark green</div>
+        <div class="box clr">Color via RGB, dark orange-red</div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+body{font-family:Arial,sans-serif;background:#f4f6fa;}
+.f{background:#fff;padding:16px 22px;border-radius:8px;box-shadow:0 2px 6px #0001;width:300px;margin:32px auto;}
+.fs{border:1px solid #ddd;border-radius:6px;padding:12px;}
+.lg{font-weight:bold;color:#333;}
+.it,.ie{width:96%;padding:6px;margin:6px 0;border:1px solid #bbb;border-radius:4px;}
+.ir{accent-color:#4285f4;}
+.is{background:#4285f4;color:#fff;border:none;padding:8px 0;border-radius:4px;width:100%;font-weight:bold;cursor:pointer;}
+.is:hover{background:#3072c7;}

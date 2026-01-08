@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harshit Khanna — Portfolio</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent1:#8b5cf6;--accent2:#06b6d4;--glass:rgba(255,255,255,0.05);--muted:rgba(255,255,255,0.65);--glass-2:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef8}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:36px auto;padding:24px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:62px;height:62px;border-radius:14px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;box-shadow:0 6px 30px rgba(11,17,26,0.6)}
+    nav{display:flex;gap:12px;flex-wrap:wrap}
+    .nav-link{padding:8px 12px;border-radius:10px;background:transparent;color:var(--muted);font-weight:600}
+    .nav-link:hover{background:var(--glass);color:#fff}
+
+    /* Hero */
+    .hero{margin-top:28px;display:grid;grid-template-columns:1fr 380px;gap:26px;align-items:start}
+    .card{background:linear-gradient(180deg,var(--card),rgba(6,10,16,0.7));border-radius:16px;padding:20px;backdrop-filter:blur(6px);box-shadow:0 6px 30px rgba(2,6,11,0.6)}
+    .intro h1{font-size:30px;margin-bottom:8px}
+    .intro p.lead{color:var(--muted);line-height:1.55}
+    .badges{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+    .badge{padding:8px 10px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));font-weight:600;font-size:13px}
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center}
+    .avatar{width:240px;height:240px;border-radius:18px;background:linear-gradient(180deg,#081223,rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;color:rgba(255,255,255,0.9);box-shadow:0 20px 40px rgba(2,6,11,0.8)}
+    .small-meta{display:flex;gap:12px;color:var(--muted);font-weight:600}
+
+    /* Sections */
+    section{margin-top:26px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+    /* Hobbies */
+    .hobby{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),var(--glass-2));min-height:120px}
+    .hobby h4{margin-bottom:8px}
+    .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Stories / Timeline */
+    .timeline{position:relative;padding-left:18px}
+    .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;background:linear-gradient(180deg,var(--accent1),var(--accent2));border-radius:6px}
+    .event{position:relative;padding:12px 12px 12px 30px;margin-bottom:14px;background:transparent}
+    .event .dot{position:absolute;left:-7px;top:18px;width:18px;height:18px;border-radius:50%;background:linear-gradient(90deg,var(--accent2),var(--accent1));box-shadow:0 6px 18px rgba(11,15,26,0.6)}
+
+    /* Projects */
+    .project{display:flex;flex-direction:column;gap:10px;border-radius:12px;padding:14px}
+    .project .meta{font-size:13px;color:var(--muted)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:14px}
+    input,textarea,button{font-family:inherit}
+    .form-control{display:flex;flex-direction:column;gap:6px}
+    input,textarea{padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    button{padding:12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border:0;color:white;font-weight:700;cursor:pointer}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding:26px}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.avatar{width:180px;height:180px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HK</div>
+        <div>
+          <div style="font-weight:800">Harshit Khanna</div>
+          <div style="font-size:12px;color:var(--muted)">BCA student • Gamer • Aspiring Video Editor</div>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#hobbies">Hobbies</a>
+        <a class="nav-link" href="#stories">Stories</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="card intro">
+          <h1>Hey — I'm Harshit</h1>
+          <p class="lead">I code, game, edit videos, and record ASMR study sessions. I'm studying BCA and building practical skills: Python, SQL, video editing and lightweight game dev. I like clean design, powerful workspaces and a little cinematic flair in everything I create.</p>
+          <div class="badges">
+            <div class="badge">Age: 18</div>
+            <div class="badge">Skills: Python • SQL • C (basics)</div>
+            <div class="badge">Aspirations: Fiverr Video Editor • Game Dev</div>
+            <div class="badge">ASMR Study Channel (daily 1‑hour)</div>
+          </div>
+
+          <section id="about" style="margin-top:18px">
+            <h3 style="margin-bottom:8px">About me</h3>
+            <div style="color:var(--muted);line-height:1.6">I'm Harshit Khanna — a focused student and self-taught coder who loves making things that look and feel premium. I enjoy learning system-level programming (C), building scripts with Python, and editing videos for relaxing, study-focused ASMR content. I prefer practical, hands-on learning and aim to turn freelancing into a full-time path while continuing my studies.</div>
+          </section>
+        </div>
+
+        <aside class="card profile">
+          <div class="avatar">HK</div>
+          <div class="small-meta">
+            <div>Location: India</div>
+            <div>Availability: Flexible (college-light)</div>
+          </div>
+          <div style="width:100%;display:flex;gap:8px;margin-top:10px">
+            <a class="badge" href="#projects">My Work</a>
+            <a class="badge" href="#contact">Contact</a>
+          </div>
+        </aside>
+      </div>
+
+      <section id="hobbies">
+        <h2 style="margin-bottom:12px">Hobbies & Passions</h2>
+        <div class="grid-3">
+          <div class="hobby card">
+            <h4>Gaming & Game Development</h4>
+            <div style="color:var(--muted)">Started gaming with keyboard & mouse since childhood. Interested in small 2D game dev (Unity + Blender practice). Building a dedicated gaming/editing PC setup and a separate Minecraft server machine.</div>
+            <div class="tags"><span class="badge">FPS • Strategy</span><span class="badge">Unity</span><span class="badge">Blender</span></div>
+          </div>
+
+          <div class="hobby card">
+            <h4>Video Editing & Freelancing</h4>
+            <div style="color:var(--muted)">Planning to start on Fiverr as a video editor. Comfortable learning and shipping creative edits quickly — clean cuts, story-driven pacing and relaxing ASMR study videos.</div>
+            <div class="tags"><span class="badge">Fiverr</span><span class="badge">Premiere/DaVinci</span><span class="badge">Efficient workflow</span></div>
+          </div>
+
+          <div class="hobby card">
+            <h4>ASMR Study Channel</h4>
+            <div style="color:var(--muted)">Daily 1‑hour sessions with weekly 5‑hour study tests planned. Goal: build a calm study space, help others focus, and develop consistency in content creation.</div>
+            <div class="tags"><span class="badge">1hr daily</span><span class="badge">Weekly 5hr</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories">
+        <h2 style="margin-bottom:12px">Stories & Projects worth noting</h2>
+        <div class="card timeline">
+          <div class="event">
+            <div class="dot"></div>
+            <strong>High School DxD Character — "Harshit"</strong>
+            <div style="color:var(--muted);margin-top:6px">A fan-fiction persona you created: a mafia-royalty human prince allied with the Gremory family and entwined in a complex, protective relationship. This shows your love for storytelling and world-building.</div>
+          </div>
+
+          <div class="event">
+            <div class="dot"></div>
+            <strong>ASMR Study Routine</strong>
+            <div style="color:var(--muted);margin-top:6px">Planned daily ASMR study sessions leading up to BCA — a disciplined approach to both learning and content creation.</div>
+          </div>
+
+          <div class="event">
+            <div class="dot"></div>
+            <strong>Learning & Exams</strong>
+            <div style="color:var(--muted);margin-top:6px">You learned Python & SQL during 11th–12th, plan to start IAS prep after BCA, and recently began Group C exam prep with a focused daily schedule.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 style="margin-bottom:12px">Projects & Skills</h2>
+        <div class="grid-2">
+          <div class="card project">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h4>Video Editing Portfolio (ideas)</h4><div class="meta">Status: planning</div></div>
+            <div class="meta">Short ASMR study videos, long-focus weeklies, test-review edits, and chill study montages for YouTube.</div>
+            <div style="margin-top:10px;color:var(--muted)">Tools: Premiere Pro / DaVinci Resolve, OBS for recording, basic audio cleanup skills, and templated workflows to speed delivery on Fiverr.</div>
+          </div>
+
+          <div class="card project">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h4>Code & Small Dev</h4><div class="meta">Status: learning</div></div>
+            <div class="meta">Python scripts, SQL practice, C fundamentals, and small Unity 2D prototypes. Comfortable with practical, hands-on study (paper-based DSA practice).</div>
+            <div style="margin-top:10px;color:var(--muted)">Learning goals: build one simple Unity 2D game, automate content workflows, and polish a freelance portfolio.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 style="margin-bottom:12px">Contact</h2>
+        <div class="card contact-grid">
+          <div>
+            <form onsubmit="event.preventDefault();alert('Form submitted — replace with your email or back-end.');">
+              <div class="form-control"><label>Name</label><input placeholder="Your name" required></div>
+              <div class="form-control"><label>Message</label><textarea rows="4" placeholder="Say hi, propose a project, or ask for collab" required></textarea></div>
+              <div style="display:flex;gap:8px;margin-top:10px"><button type="submit">Send</button><button type="button" onclick="copyQuick()">Copy quick contact</button></div>
+            </form>
+          </div>
+
+          <aside style="padding:10px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+            <div style="font-weight:800">Quick contact</div>
+            <div style="color:var(--muted);">Handle: @harshit (fill your real handles)</div>
+            <div style="color:var(--muted);">Availability: College-light, slots for freelancing</div>
+            <div style="color:var(--muted);font-size:13px">Pro tip: replace the form's alert with your email or a server-side endpoint when ready.</div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Made with focus · Designed for Harshit Khanna
+    </footer>
+  </div>
+
+  <script>
+    function copyQuick(){
+      navigator.clipboard?.writeText('@harshit')
+        .then(()=>alert('Copied quick contact to clipboard'))
+        .catch(()=>alert('Copy failed — permission denied'))
+    }
+    // Smooth scroll for nav
+    document.querySelectorAll('a.nav-link').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
+  </script>
+</body>
+</html>

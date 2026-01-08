@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marquee Tags</title>
+        <style>
+            body {
+                background-color: black;
+                color: antiquewhite;
+            }
+            .stylish {
+                font-family: Dubai, Arial, sans-serif;
+                background-color: yellow;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 align="center">Marquee Tags</h1>
+        <hr color="white">
+        <marquee>This is coming from right.</marquee><hr>
+        <marquee direction="right">This is coming from left.</marquee><hr>
+        <marquee bgcolor="yellow">
+            <span class="stylish">This is stylish.</span>
+        </marquee><hr>
+        <marquee behavior="alternate">This is Alternate</marquee><hr>
+        <marquee behavior="slide" direction="right">This is right slide.</marquee><hr>
+        <marquee behavior="slide" direction="left">This is left slide.</marquee><hr>
+        <marquee scrollamount="30" behavior="alternate" scrolldelay="20">This is with scroll amount and scroll delay.</marquee><hr>
+        <marquee onmouseover="this.stop();">This would stop after mouse hovered</marquee><hr>
+        <marquee onmouseout="this.start();" direction="right">This would start again after mouse hovered.</marquee><hr>
+        <marquee onmouseover="this.stop();" onmouseout="this.start();">This would stop when mouse hovered.</marquee><hr>
+    </body>
+</html>

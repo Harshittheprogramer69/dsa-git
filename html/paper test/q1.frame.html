@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 1[a]</title>
+    </head>
+    <frameset rows="25%,50%,25%">
+        <!-- First Row: 4 columns -->
+        <frameset cols="25%,25%,25%,25%">
+            <frame name="frame1" src="page1.html">
+            <frame name="frame2" src="page2.html">
+            <frame name="frame3" src="page3.html">
+            <frame name="frame4" src="page4.html">
+        </frameset>
+
+        <!-- Second Row: 4 columns with last divided vertically -->
+        <frameset cols="25%,25%,25%,25%">
+            <frame name="frame5" src="page5.html">
+            <frame name="frame6" src="page6.html">
+            <frame name="frame7" src="page7.html">
+            <frameset rows="50%,50%">
+                <frame name="frame8" src="page8.html">
+                <frame name="frame9" src="page9.html">
+            </frameset>
+        </frameset>
+
+        <!-- Third Row: 3 columns -->
+        <frameset cols="30%,40%,30%">
+            <!-- Left column: frame10 full height -->
+            <frame name="frame10" src="page10.html">
+
+            <!-- Middle column: frames 11 and 13 stacked vertically -->
+            <frameset rows="60%,40%">
+                <frame name="frame11" src="page11.html">
+                <frame name="frame13" src="page13.html">
+            </frameset>
+
+            <!-- Right column: frame12 full height -->
+            <frame name="frame12" src="page12.html">
+        </frameset>
+
+        <noframes>
+            <body>Your browser does not support frames.</body>
+        </noframes>
+    </frameset>
+</html>

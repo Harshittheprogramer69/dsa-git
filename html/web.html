@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Harshit Khanna — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root{
+        --bg-1:#02040a;
+        --bg-2:#071022;
+        --panel:#06101a;
+        --glass:rgba(255,255,255,0.03);
+        --muted:rgba(230,238,248,0.6);
+        --accent1:#4c51bf;
+        --accent2:#0ea5b7;
+        --gothic:#b9c7ff;
+        --radius:16px;
+        --maxw:1200px;
+      }
+      *{box-sizing:border-box;margin:0;padding:0}
+      html,body{height:100%;background:linear-gradient(180deg,var(--bg-1),var(--bg-2));color:#e6eef8;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;scroll-behavior:smooth}
+      a{color:inherit;text-decoration:none}
+      .container{max-width:var(--maxw);margin:28px auto;padding:28px}
+      .header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+      .brand{display:flex;align-items:center;gap:14px}
+      .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:white;box-shadow:0 10px 40px rgba(12,18,40,0.6)}
+      .title{font-weight:800;font-size:18px;letter-spacing:0.6px}
+      .sub{font-size:12px;color:var(--muted);margin-top:2px}
+      .nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+      .nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;transition:all .28s ease}
+      .nav a.is-active{background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));color:#fff;box-shadow:0 6px 20px rgba(12,18,40,0.6)}
+      .hero{margin-top:28px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+      .panel{background:linear-gradient(180deg,var(--panel),rgba(2,6,11,0.6));border-radius:var(--radius);padding:20px;backdrop-filter:blur(6px);box-shadow:0 10px 40px rgba(2,6,11,0.6);overflow:hidden;position:relative}
+      .hero-left h1 {
+        font-size: 34px;
+        line-height: 1.02;
+        background: linear-gradient(90deg, var(--gothic), var(--accent1));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 8px;
+      }
+      .lead{color:var(--muted);line-height:1.55;font-size:15px}
+      .badges{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+      .badge{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));font-weight:700;font-size:13px;color:var(--muted);transition:transform .25s ease}
+      .badge:hover{transform:translateY(-4px);color:#fff}
+      .avatar{width:320px;height:320px;border-radius:18px;background:linear-gradient(180deg,#020815,rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;font-size:72px;font-weight:900;color:rgba(255,255,255,0.95);box-shadow:0 30px 60px rgba(2,6,11,0.8)}
+      .small-meta{display:flex;gap:12px;color:var(--muted);font-weight:600;margin-top:12px;flex-wrap:wrap}
+      .sections{margin-top:26px;display:grid;grid-template-columns:1fr;gap:18px}
+      .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+      .card{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.02));min-height:120px;transition:transform .35s ease,box-shadow .35s ease}
+      .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(12,18,40,0.6)}
+      .hobby h4{margin-bottom:8px;color:#fff;font-weight:700}
+      .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+      .timeline{position:relative;padding-left:18px}
+      .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;background:linear-gradient(180deg,var(--accent1),var(--accent2));border-radius:6px}
+      .event{position:relative;padding:12px 12px 12px 30px;margin-bottom:14px;background:transparent}
+      .event .dot{position:absolute;left:-7px;top:18px;width:18px;height:18px;border-radius:50%;background:linear-gradient(90deg,var(--accent2),var(--accent1));box-shadow:0 6px 18px rgba(11,15,26,0.6)}
+      .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+      .project .meta{font-size:13px;color:var(--muted)}
+      .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:14px}
+      input,textarea,button{font-family:inherit}
+      .form-control{display:flex;flex-direction:column;gap:6px}
+      input,textarea{padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+      button{padding:12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border:0;color:white;font-weight:700;cursor:pointer}
+      .footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding:26px}
+      @media (max-width:1080px){.hero{grid-template-columns:1fr 340px}.avatar{width:260px;height:260px}}
+      @media (max-width:920px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.avatar{width:200px;height:200px}}
+      /* animations and effects */
+      .reveal{opacity:0;transform:translateY(18px);transition:all .75s cubic-bezier(.2,.9,.2,1)}
+      .reveal.visible{opacity:1;transform:translateY(0)}
+      .fade-in{animation:fadeUp .9s ease forwards}
+      @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+      .gradient-line{height:3px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));margin:18px 0;box-shadow:0 8px 28px rgba(14,165,183,0.06)}
+      /* page transitions */
+      .page{position:relative;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease;display:none}
+      .page.active{display:block;opacity:1;transform:translateY(0)}
+      /* gallery */
+      .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+      .gallery .pic{height:140px;border-radius:10px;background-size:cover;background-position:center;box-shadow:inset 0 0 40px rgba(0,0,0,0.45)}
+      @media (max-width:920px){.gallery{grid-template-columns:repeat(2,1fr)}}
+      /* custom cursor and glow */
+      .cursor{position:fixed;top:0;left:0;width:14px;height:14px;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);z-index:9999;background:radial-gradient(circle at 40% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.15) 20%, rgba(139,92,246,0.06) 40%);mix-blend-mode:screen;transition:transform .12s ease,opacity .12s linear}
+      .cursor--big{width:48px;height:48px;background:radial-gradient(circle at 40% 35%, rgba(139,92,246,0.14), rgba(14,165,183,0.05) 40%);opacity:0.9}
+      .header-glow{position:fixed;right:40px;top:40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,var(--accent2),transparent 40%);filter:blur(40px);pointer-events:none;opacity:0.12;z-index:0}
+      /* particles canvas */
+      #bg-canvas{position:fixed;inset:0;z-index:0;opacity:0.55}
+      .container, .panel, .logo, .nav a, .avatar{position:relative;z-index:2}
+    </style>
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="cursor" id="cursor"></div>
+    <div class="header-glow"></div>
+    <div class="container">
+      <header class="header">
+        <div class="brand" onclick="navigate('#home')">
+          <div class="logo">HK</div>
+          <div>
+            <div class="title">Harshit Khanna</div>
+            <div class="sub">BCA Student • Gamer • Video Editor</div>
+          </div>
+        </div>
+        <nav class="nav" id="mainNav">
+          <a href="#home" class="nav-link is-active" data-target="home">Home</a>
+          <a href="#about" class="nav-link" data-target="about">About</a>
+          <a href="#projects" class="nav-link" data-target="projects">Projects</a>
+          <a href="#stories" class="nav-link" data-target="stories">Stories</a>
+          <a href="#gallery" class="nav-link" data-target="gallery">Gallery</a>
+          <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+          <a href="#resume" class="nav-link" data-target="resume">Resume</a>
+        </nav>
+      </header>
+
+      <main id="app">
+        <section id="home" class="page active">
+          <div class="hero">
+            <div class="panel hero-left reveal">
+              <h1>Hey — I'm Harshit</h1>
+              <p class="lead">I build, edit, code and level-up systems. Focused on crisp design, efficient tools, and creative problem solving. I pursue practical skills that convert into projects and coding work.</p>
+              <div class="badges">
+                <div class="badge">Age: 18</div>
+                <div class="badge">Skills: Python • SQL • C</div>
+                <div class="badge">Aspirations: Editor • Game Dev</div>
+              </div>
+              <div class="gradient-line"></div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <button class="badge" onclick="navigate('#projects')" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff">View Projects</button>
+                <button class="badge" onclick="navigate('#contact')" style="border:1px solid rgba(255,255,255,0.04)">Contact Me</button>
+              </div>
+              <section style="margin-top:18px">
+                <h3 style="color:var(--gothic);margin-bottom:8px">Bio</h3>
+                <div style="color:var(--muted);line-height:1.6">I’m a practical learner who values depth over noise — someone who learns best by building, breaking, and perfecting things through experience. I enjoy creating small games that challenge logic and creativity, editing cinematic videos that blend emotion with precision, and automating workflows that make systems feel alive. Every project I take on is about refinement — learning how things work beneath the surface and shaping them into something efficient, aesthetic, and powerful. I’m also passionate about designing a high-performance workspace that reflects discipline, clarity, and control — a place built not just for work, but for mastery.</div>
+              </section>
+            </div>
+
+            <aside class="panel profile reveal">
+              <div class="avatar">Harshit</div>
+              <div class="small-meta">
+                <div>Location: India</div>
+                <div>Availability: Flexible</div>
+              </div>
+              <div style="width:100%;display:flex;gap:8px;margin-top:14px">
+                <a class="badge" onclick="navigate('#projects')">My Work</a>
+                <a class="badge" onclick="navigate('#resume')">Resume</a>
+              </div>
+              <div style="margin-top:14px;color:var(--muted);font-size:13px">Peace is a gift which calms many yet also scares many in it's own way.</div>
+            </aside>
+          </div>
+
+          <div class="sections">
+            <section class="panel reveal">
+              <h2 style="margin-bottom:12px">Hobbies & Passions</h2>
+              <div class="grid-3">
+                <div class="card hobby">
+                  <h4>Gaming & Game Dev</h4>
+                  <div style="color:var(--muted)">Started with keyboard & mouse early. Building 2D prototypes in Unity, experimenting with Blender, and planning dedicated dual-PC setups.</div>
+                  <div class="tags"><span class="badge">FPS</span><span class="badge">Unity</span><span class="badge">Blender</span></div>
+                </div>
+                <div class="card hobby">
+                  <h4>Video Editing</h4>
+                  <div style="color:var(--muted)">Focused on efficient workflows and cinematic pacing to deliver clean edits quickly for clients.</div>
+                  <div class="tags"><span class="badge">Premiere</span><span class="badge">DaVinci</span><span class="badge">OBS</span></div>
+                </div>
+                <div class="card hobby">
+                  <h4>Learning & Systems</h4>
+                  <div style="color:var(--muted)">From scripting automation to understanding system fundamentals — consistent progress is the goal.</div>
+                  <div class="tags"><span class="badge">Python</span><span class="badge">SQL</span><span class="badge">C</span></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel reveal">
+              <h2 style="margin-bottom:12px">Stories & Highlights</h2>
+              <div class="timeline">
+                <div class="event">
+                  <div class="dot"></div>
+                  <strong>Horror Story writer — "Harshit"</strong>
+                  <div style="color:var(--muted);margin-top:6px">A creative persona showcasing storytelling and world-building.</div>
+                </div>
+                <div class="event">
+                  <div class="dot"></div>
+                  <strong>Learning Journey</strong>
+                  <div style="color:var(--muted);margin-top:6px">Python & SQL foundations learned during school; ongoing focus on practical projects and exam prep.</div>
+                </div>
+                <div class="event">
+                  <div class="dot"></div>
+                  <strong>Workspace Vision</strong>
+                  <div style="color:var(--muted);margin-top:6px">Aiming for an elite dual-PC editing + gaming setup with NAS backup for long-term workflows.</div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="about" class="page">
+          <div class="panel reveal">
+            <h2>About</h2>
+            <div style="display:flex;gap:18px;align-items:center;margin-top:14px;flex-wrap:wrap">
+              <div style="flex:1;min-width:280px">
+                <p style="color:var(--muted);line-height:1.7">I’m Harshit Khanna, a BCA student building a toolkit of practical skills: coding, editing and game development. I prefer hands-on learning and creating polished deliverables. My focus is on turning small, consistent wins into a portfolio of meaningful work.</p>
+                <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+                  <div class="badge">Problem Solver</div>
+                  <div class="badge">Fast Coder</div>
+                  <div class="badge">Self Learner</div>
+                </div>
+              </div>
+              <div style="width:360px">
+                <div style="border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(2,6,11,0.6)">
+                  <img src="https://images.unsplash.com/photo-1505765058491-18b3f88e7f09?auto=format&fit=crop&w=1200&q=80" alt="" style="width:100%;display:block;"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal" style="margin-top:18px">
+            <h2>Skills & Tools</h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+              <div class="card" style="min-width:200px">
+                <h4 style="margin-bottom:6px">Coding</h4>
+                <div style="color:var(--muted)">Python · SQL · C · Documentation</div>
+              </div>
+              <div class="card" style="min-width:200px">
+                <h4 style="margin-bottom:6px">Editing</h4>
+                <div style="color:var(--muted)">Premiere Pro · DaVinci Resolve · OBS</div>
+              </div>
+              <div class="card" style="min-width:200px">
+                <h4 style="margin-bottom:6px">Game Dev</h4>
+                <div style="color:var(--muted)">Unity (2D) · Blender basics</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="page">
+          <div class="panel reveal">
+            <h2>Projects</h2>
+            <div class="grid-2" style="margin-top:12px">
+              <div class="card project">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <h4>Video Editing Templates</h4>
+                  <div class="meta">Planning</div>
+                </div>
+                <div class="meta" style="margin-top:8px;color:var(--muted)">Template-based workflows for fast turnaround on client edits with cinematic color grading and clean cuts.</div>
+                <div style="margin-top:12px;display:flex;gap:8px">
+                  <a class="badge">Short-form</a>
+                  <a class="badge">Montages</a>
+                  <a class="badge">Client-ready</a>
+                </div>
+              </div>
+
+              <div class="card project">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <h4>Unity 2D Prototype</h4>
+                  <div class="meta">In Progress</div>
+                </div>
+                <div class="meta" style="margin-top:8px;color:var(--muted)">A small 2D prototype to learn core mechanics, polish movement and deploy a simple playable demo.</div>
+                <div style="margin-top:12px;display:flex;gap:8px">
+                  <a class="badge">Prototype</a>
+                  <a class="badge">Polish</a>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:18px" class="panel">
+              <h3 style="margin-bottom:12px">Featured Work</h3>
+              <div class="gallery">
+                <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60')"></div>
+                <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60')"></div>
+                <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=60')"></div>
+                <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60')"></div>
+                <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60')"></div>
+                <div class="pic" style="background-image:url('https://teachyourkidscode.com/wp-content/uploads/2022/02/best-coding-language-for-games.jpg')"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="stories" class="page">
+          <div class="panel reveal">
+            <h2>Stories</h2>
+            <div style="margin-top:12px;color:var(--muted);line-height:1.7">
+              Short-form narrative pieces and world-building notes. Creative writing focused on characters, tension and atmosphere. Below are a few highlights and themes I explore.
+            </div>
+            <div style="margin-top:12px" class="card">
+              <h4>The Art of Silent Power</h4>
+              <div style="color:var(--muted);margin-top:8px"><ul>
+                <li>I observe, read, and calculate. In seconds, I know who’s lying, who’s pretending, and who’s dangerous.</li>
+
+                <li>My strength isn’t loud. It’s the kind that bends people without force — quiet, steady, deliberate.</li>
+
+                <li>Discipline isn’t restraint — it’s focus sharpened into a weapon.
+                I don’t react; I calculate. Every move has weight, every word has purpose.</li>
+
+                <li>Loyalty, for me, isn’t emotion. It’s a contract written in precision and consequence.
+                Family, code, or cause — I follow what endures, not what feels good.</li>
+
+                <li>I don’t crave power; I embody it.
+                Power that doesn’t need to announce itself, power that bends situations by existing.</li>
+
+                <li>Emotion is useful only when it serves the plan.
+                I can wear empathy like a mask, or use it as leverage — whichever the moment demands.</li>
+
+                <li>Beneath the silence, there’s purpose — cold, focused, and untouchable.</li>
+
+              </ul></div>
+            </div>
+            <div style="margin-top:12px" class="card">
+              <h4>Duty & Choice</h4>
+              <div style="color:var(--muted);margin-top:8px">Stories that explore duty — not just to family, but to an internal code that cannot be broken — fascinate me. Because for some of us, loyalty isn’t kindness; it’s control. The idea of doing what must be done, even when emotion screams otherwise, feels natural. There’s a strange peace in that — the kind of calm that comes when morality becomes optional, and only results matter. When the stakes get real, masks fall off. People who once spoke of love or ethics suddenly tremble, but I don’t. I move with precision, detached but deliberate. My choices don’t always come from conscience; they come from purpose. That’s the difference — I don’t chase what feels right, I chase what works. Maybe that’s where the line between discipline and darkness blurs, and maybe that’s where I live best.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="page">
+          <div class="panel reveal">
+            <h2>Gallery</h2>
+            <div style="margin-top:12px" class="gallery">
+              <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=60')"></div>
+              <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60')"></div>
+              <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=60')"></div>
+              <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60')"></div>
+              <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60')"></div>
+              <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=60')"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="resume" class="page">
+          <div class="panel reveal">
+            <h2>Resume</h2>
+            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+              <div style="flex:1;min-width:320px">
+                <h4 style="margin-bottom:6px">Summary</h4>
+                <div style="color:var(--muted);line-height:1.6">Focused student building practical skills in software, editing and creative tech. Seeking opportunities and projects that push quality and discipline.</div>
+                <h4 style="margin-top:12px">Experience</h4>
+                <div style="color:var(--muted);margin-top:6px">Video editing (personal projects), personal Unity prototypes, scripting workflows and content production pipelines.</div>
+              </div>
+              <div style="width:340px">
+                <div style="background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:10px">
+                  <h4 style="margin-bottom:6px">Contact</h4>
+                  <div style="color:var(--muted)">📸 Instagram: @harshitkhanna6969</div>
+                  <div style="color:var(--muted);margin-top:8px">📧 Email: ubisoftgamer18@gmail.com</div>
+                  <div style="margin-top:12px"><button onclick="downloadResume()">Download txt</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="page">
+          <div class="panel reveal">
+            <h2>Contact</h2>
+            <div class="contact-grid" style="margin-top:12px">
+              <div>
+                <form onsubmit="event.preventDefault();sendMessage()">
+                  <div class="form-control"><label style="color:var(--muted);font-weight:700">Name</label><input id="cname" placeholder="Your name" required></div>
+                  <div class="form-control" style="margin-top:8px"><label style="color:var(--muted);font-weight:700">Message</label><textarea id="cmsg" rows="5" placeholder="Say hi or propose a project" required></textarea></div>
+                  <div style="display:flex;gap:8px;margin-top:12px">
+                    <button type="submit">Send</button>
+                    <button type="button" onclick="copyInstagram()">Copy Instagram</button>
+                  </div>
+                </form>
+              </div>
+
+              <aside style="padding:10px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+                <div style="font-weight:800">Quick contact</div>
+                <div style="color:var(--muted);">Instagram: @harshitkhanna6969</div>
+                <div style="color:var(--muted);">Availability: College-light Or in the places no one expects</div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        Made with focus · Harshit Khanna
+      </footer>
+    </div>
+
+    <script>
+    const pages=document.querySelectorAll('.page');
+    const navLinks=document.querySelectorAll('.nav-link');
+    function setActive(target){
+      pages.forEach(p=>p.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      navLinks.forEach(n=>n.classList.toggle('is-active', n.dataset.target===target));
+      document.querySelectorAll('.reveal').forEach(el=>el.classList.remove('visible'));
+      setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))},90);
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    navLinks.forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const t=a.dataset.target;
+        location.hash = t;
+        setActive(t);
+      });
+    });
+    function navigate(hash){const t=hash.replace('#','');location.hash=t;setActive(t)}
+    window.addEventListener('load',()=>{
+      let h=location.hash.replace('#','')||'home';
+      if(!document.getElementById(h)) h='home';
+      setActive(h);
+    });
+    function copyInstagram(){navigator.clipboard?.writeText('@harshitkhanna6969').then(()=>alert('Instagram copied'))}
+    function sendMessage(){alert('Message sent')}
+    function downloadResume() {
+      const resume = `
+    Harshit Khanna
+    ------------------------
+    📍 Location: India
+    🎓 Education: BCA (Bachelor of Computer Applications)
+    💼 Career Goal: To work at Microsoft or Google as a top-level software engineer or developer.
+    📧 Email: ubisoftgamer18@gmail.com
+    📸 Instagram: @harshitkhanna6969
+
+    -----------------------------------------
+    🧩 Skills
+    • Python, SQL
+    • HTML, CSS, JavaScript
+    • Video Editing (DaVinci Resolve, Premiere Pro)
+    • Game Development (Unity, Blender – 2D Projects)
+    • UI/UX Understanding and Logic Building
+
+    -----------------------------------------
+    💪 Strengths
+    • Consistent and self-disciplined
+    • Logical, analytical, and creative mindset
+    • Quick learner and adaptable to challenges
+    • Calm under pressure; good with planning and strategy
+
+    -----------------------------------------
+    🎯 Current Focus
+    • Building strong programming fundamentals (DSA, C, C++)
+    • Improving problem-solving and algorithmic skills
+    • Working on personal projects and GitHub portfolio
+    • Preparing for placements and global tech competitions
+
+    -----------------------------------------
+    📚 Hobbies
+    • Gaming (keyboard/mouse player since age 5)
+    • Story writing and world-building
+    • DIY smart tech setups and automation
+
+    -----------------------------------------
+    💭 Personal Philosophy
+    "Discipline builds respect, respect builds power, and power builds peace."
+
+    -----------------------------------------
+    `;
+
+      const blob = new Blob([resume], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Harshit-Khanna-Resume.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    /* cursor */
+    const cursor=document.getElementById('cursor');
+    let mouseX=0,mouseY=0;
+    window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';});
+    document.querySelectorAll('button,a,input,textarea,.badge,.nav-link').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cursor.classList.add('cursor--big'));
+      el.addEventListener('mouseleave',()=>cursor.classList.remove('cursor--big'));
+    });
+
+    /* background particles */
+    const canvas=document.getElementById('bg-canvas');
+    const ctx=canvas.getContext('2d');
+    let W, H, particles=[];
+    function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+    window.addEventListener('resize',resize);resize();
+    function rand(min,max){return Math.random()*(max-min)+min}
+    class P{
+      constructor(){
+        this.reset();
+      }
+      reset(){
+        this.x=rand(0,W);
+        this.y=rand(0,H);
+        this.vx=rand(-0.2,0.2);
+        this.vy=rand(-0.6,-0.1);
+        this.r=rand(0.6,2.8);
+        this.alpha=rand(0.08,0.28);
+        this.hue=rand(200,260);
+      }
+      update(){
+        this.x+=this.vx;
+        this.y+=this.vy;
+        this.alpha*=0.9997;
+        if(this.y< -10 || this.alpha<0.02) this.reset();
+      }
+      draw(){
+        ctx.beginPath();
+        ctx.fillStyle=`hsla(${this.hue},70%,70%,${this.alpha})`;
+        ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+        ctx.fill();
+      }
+    }
+    function initParticles(n=120){particles=[];for(let i=0;i<n;i++)particles.push(new P())}
+    initParticles(160);
+    function loop(){
+      ctx.clearRect(0,0,W,H);
+      ctx.save();
+      ctx.globalCompositeOperation='lighter';
+      particles.forEach(p=>{p.update();p.draw()});
+      ctx.restore();
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    /* subtle parallax for panels */
+    document.addEventListener('mousemove',e=>{
+      const lx = (e.clientX - window.innerWidth/2)/50;
+      const ly = (e.clientY - window.innerHeight/2)/80;
+      document.querySelectorAll('.panel').forEach((el,i)=>{
+        el.style.transform=`translate3d(${lx*(i%2?1:-1)}px,${ly*(i%2?1:-1)}px,0)`;
+      });
+    });
+
+    /* reveal on scroll */
+    function revealOnScroll(){
+      document.querySelectorAll('.reveal').forEach(el=>{
+        const top=el.getBoundingClientRect().top;
+        if(top < window.innerHeight*0.85) el.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll',revealOnScroll);
+    setTimeout(()=>revealOnScroll(),120);
+
+    /* keyboard nav */
+    window.addEventListener('keydown',e=>{
+      if(e.key==='1') navigate('#home');
+      if(e.key==='2') navigate('#about');
+      if(e.key==='3') navigate('#projects');
+      if(e.key==='4') navigate('#stories');
+      if(e.key==='5') navigate('#gallery');
+      if(e.key==='6') navigate('#contact');
+    });
+
+    /* initial micro-animations */
+    document.querySelectorAll('.reveal').forEach((el,idx)=>{setTimeout(()=>el.classList.add('visible'),160+idx*90)});
+    </script>
+  </body>
+</html>
