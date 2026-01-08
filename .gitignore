@@ -1,0 +1,17 @@
+# ===== C / C++ compiled files =====
+*.exe
+*.o
+*.out
+*.obj
+a.exe
+
+# ===== Build folders =====
+build/
+bin/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== OS junk =====
+Thumbs.db
+.DS_Store
