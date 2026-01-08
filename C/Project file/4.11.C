@@ -1,0 +1,18 @@
+/*P4.11 Program to illustrate the use of cast operator*/
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    int x,y;
+    float p,q;
+    clrscr();
+
+    x=5,y=2;
+    p=x/y;
+    printf("p = %d\n",p);
+    q=(float)(x/y);
+    printf("q = %f\n",q);
+    
+    getch();
+}
+

@@ -1,0 +1,13 @@
+/*P4.9 Program to understand the sizeof operator*/
+#include <stdio.h>
+#include <conio.h>
+void main() {
+    int var;
+    clrscr();
+
+    printf("Size of int = %d" ,sizeof (int));
+    printf("Size of float = %d",sizeof(float));
+    printf("Sizeofvar = %d",sizeof(var));
+    printf("Size of an integer constant = %d",sizeof(45));
+    getch();
+}

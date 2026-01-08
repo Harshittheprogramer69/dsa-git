@@ -1,0 +1,14 @@
+/*P4.6 Program to print the larger of two number using conditional operator*/
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    int a,b,max;
+    clrscr();
+    printf("Enter values for a and b: ");
+    scanf("%d %d", &a, &b);
+    max = a>b ? a:b;
+    printf("Larger of %d and %d is %d\n",a,b,max);
+    getch();
+}
