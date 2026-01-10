@@ -18,8 +18,8 @@ int main() {
         }
     }
 
-    cout << max << endl;
-    cout << min << endl;
+    cout << "MAXIMUM = " << max << endl;
+    cout << "MINIMUM = " << min << endl;
     
     return 0;
 }
