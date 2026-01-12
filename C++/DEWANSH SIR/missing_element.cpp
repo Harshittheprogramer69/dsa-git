@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     int arr[] = {1, 2, 3, 5};
     int n = 5;              
-    int size = 4;           
+    int size = sizeof(arr)/sizeof(arr[0]);           
 
     int expectedSum = n * (n + 1) / 2;
     int actualSum = 0;
