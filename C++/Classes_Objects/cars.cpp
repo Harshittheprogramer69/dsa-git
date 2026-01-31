@@ -68,18 +68,18 @@ int main() {
     int choice;
     do {
         /*USER INTERFACE*/
-        cout << "\n====== VEHICLE MANAGEMENT SYSTEM ======\n";
-        cout << "1. Add Truck\n";
-        cout << "2. Show All Vehicles\n";
-        cout << "3. Show Company Count\n";
-        cout << "4. Exit\n";
+        cout << "\n====== VEHICLE MANAGEMENT SYSTEM ======" << endl;
+        cout << "1. Add Truck" << endl;
+        cout << "2. Show All Vehicles" << endl;
+        cout << "3. Show Company Count" << endl;
+        cout << "4. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
         /*options*/
         if(choice == 1) {
             if (count >= 100) {
-                cout << "Garage is full!\n";
+                cout << "Garage is full!" << endl;
                 continue;
             }
             int totalVehciles;
@@ -102,17 +102,17 @@ int main() {
             if(count == 0) {
                 cout << "No Vechiles added yet." << endl;
             } else {
-                cout << "------------------------\n";
+                cout << "------------------------" << endl;
                 for(int i = 0; i < count; i++) {
                     garage[i]->vehicleType();
                     garage[i]->display();
-                    cout << "------------------------\n";
+                    cout << "------------------------" << endl;
                 }   
             }
         } else if (choice == 3) {
             cout << "Total Companies created: " << CARS::getCompanyCount() << endl;
         } else if (choice == 4) {
-            cout << "Shutting down system..\n";
+            cout << "Shutting down system.." << endl;
 
             for(int i = 0; i < count; i++) {
                 delete garage[i];
