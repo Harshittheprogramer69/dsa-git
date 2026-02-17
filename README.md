@@ -119,8 +119,8 @@ rather than on polished production projects.
 
 📬 Contact
 
-GitHub: [harshittheprogrammer69]("https://github.com/Harshittheprogramer69")
-Email: [ubisoftgamer18@gmail.com](mailto:"ubisoftgamer18@gmail.com")
+- GitHub: [harshittheprogrammer69](https://github.com/Harshittheprogramer69)
+- Email: [ubisoftgamer18@gmail.com](mailto:"ubisoftgamer18@gmail.com")
 
 I’m always open to learning opportunities, collaboration, and technical discussions related to programming and computer science.
 
