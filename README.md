@@ -37,6 +37,13 @@ The repository is intended to be viewed by:
 - Styling and layout using CSS
 - Understanding of how the web renders content
 
+### C#
+- Object-Oriented and modern application development
+- .NET ecosystem fundamentals
+- Console applications and structured program design
+- Strong typing and managed memory model
+- Suitable for backend logic and application development
+
 ---
 
 ## 📁 Repository Structure
@@ -71,6 +78,11 @@ python filename.py
 ```
 Open the .html file directly in a web browser
 ```
+### C#
+```
+dotnet run filename.cs
+```
+
 ---
 
 🧠 Development Practices
@@ -104,6 +116,13 @@ This repository is actively maintained and updated as I continue learning.
 This is a learning-focused repository.
 The emphasis is on understanding concepts deeply and writing correct, maintainable code
 rather than on polished production projects.
+
+📬 Contact
+
+GitHub: [harshittheprogrammer69]("https://github.com/Harshittheprogramer69")
+Email: [ubisoftgamer18@gmail.com](mailto:"ubisoftgamer18@gmail.com")
+
+I’m always open to learning opportunities, collaboration, and technical discussions related to programming and computer science.
 
 
 ---
