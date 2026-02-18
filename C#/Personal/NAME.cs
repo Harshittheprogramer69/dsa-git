@@ -1,6 +1,6 @@
 using System;
 
-namespace Name
+namespace Personal
 {
     class Print_name
     {

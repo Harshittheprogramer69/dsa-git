@@ -1,6 +1,6 @@
 using System;
 
-namespace Add
+namespace Personal
 {
     class WORK
     {
