@@ -11,16 +11,16 @@ int main() {
     printf("Enter number of processes: ");
     scanf("%d", &n);
 
-    int pid[n], bt[n], priority[n]; 
-    int wt[n], tat[n];
+    int process_id[n], burst_time[n], priority[n]; 
+    int waiting_time[n], turnaround_time[n];
     int i, j; // Loops
 
     for(i = 0; i < n; i++) {
         printf("\nProcess %d\n", i+1);
-        pid[i] = i + 1;
+        process_id[i] = i + 1;
 
         printf("Enter Burst Time: ");
-        scanf("%d", &bt[i]);
+        scanf("%d", &burst_time[i]);
 
         printf("Enter Priority: ");
         scanf("%d", &priority[i]);
@@ -31,19 +31,19 @@ int main() {
         for(j = i+1; j < n; j++) {
             if(priority[i] > priority[j]) {
                 swap(&priority[i],&priority[j]);
-                swap(&bt[i],&bt[j]);
-                swap(&pid[i],&pid[j]);
+                swap(&burst_time[i],&burst_time[j]);
+                swap(&process_id[i],&process_id[j]);
             }
         }
     }
 
-    wt[0] = 0;
+    waiting_time[0] = 0;
     for(i = 1; i < n; i++) {
-        wt[i] = wt[i-1] + bt[i-1];
+        waiting_time[i] = waiting_time[i-1] + burst_time[i-1];
     }
 
     for(i = 0; i < n; i++) {
-        tat[i] = wt[i] + bt[i];
+        turnaround_time[i] = waiting_time[i] + burst_time[i];
     }
 
     
@@ -51,7 +51,7 @@ int main() {
 
     for(i = 0; i < n; i++) {
         printf("%d\t%d\t%d\t\t%d\t%d\n",
-               pid[i], bt[i], priority[i], wt[i], tat[i]);
+               process_id[i], burst_time[i], priority[i], waiting_time[i], turnaround_time[i]);
     }
 
     return 0;
