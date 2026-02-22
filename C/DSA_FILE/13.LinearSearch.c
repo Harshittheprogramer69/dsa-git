@@ -34,7 +34,7 @@ int main() {
     if(position == -1) {
         printf("Key Not found in array\n");
     } else {
-        printf("Key fount at index %d in array\n",position);
+        printf("Key found at index %d in array\n",position);
     }
     return 0;
 }
