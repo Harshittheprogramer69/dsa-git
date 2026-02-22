@@ -14,7 +14,7 @@ int main() {
         scanf("%d",&array[i]);
     }
 
-    printf("Enter Key to Binary search in arrray: ");
+    printf("Enter Key to Binary search in array: ");
     scanf("%d",&key);
 
     low = 0, high = size-1;
